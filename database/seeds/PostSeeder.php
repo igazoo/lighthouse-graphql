@@ -14,16 +14,21 @@ class PostSeeder extends Seeder
         //
         DB::table('posts')->insert([
             [
-                'text' => 'テスト',
-                'sort' => 12,
 
+                'text' => 'テスト',
+                'comment_id' => '1',
+                'favorite_id' => 'f_1',
             ],
             [
                 'text' => 'テスト２',
-                'sort' => 1100,
+                'comment_id' => '1',
+                'favorite_id' => 'f_1',
+
             ], [
                 'text' => 'テスト_3',
-                'sort' => 10,
+                'comment_id' => '3',
+                'favorite_id' => 'f_2',
+
             ]
 
         ]);

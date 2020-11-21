@@ -1,7 +1,0 @@
-extend type Query {
-    comments: [Comment!]! @all
-}
-
-extend type Mutation {
-    createComment(comment: String, post: Post!): Comment! @create
-}

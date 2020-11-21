@@ -1,11 +1,28 @@
-extend type Query {
-    posts: [Post!]! @all
+extend type Mutation {
+	updatePost(input: UpdatePostInput! @spread): Post @update
 }
 
-extend type Mutation {
-    createPost(text: String!, sort: Int!): Post @create
+input UpdatePostInput {
+	id: ID
+	text: String
+	comment: UpdateCommentBelongsTo
+    favorite: UpdateFavoriteBelongsTo
 }
 
-extend type Mutation {
-    deletePost(id: ID!): Post! @delete
+input UpdateCommentBelongsTo {
+    update: UpdateCommentInput
+}
+
+input UpdateCommentInput {
+    id:ID
+    text:String
+}
+
+input UpdateFavoriteBelongsTo {
+    update: UpdateFavoriteInput
+}
+
+input UpdateFavoriteInput {
+    id: ID
+    fav: String
 }

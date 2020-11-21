@@ -14,12 +14,17 @@ class CommentSeeder extends Seeder
         //
         DB::table('comments')->insert([
             [
-                'post_id' => 1,
-                'comment' => "テスト"
+                'id' => '1',
+                'text' => 'コメント'
+            ],
+            [
+                'id' => '2',
+                'text' => 'コメント＿２'
             ], [
-                'post_id' => 2,
-                'comment' => "テスト_2"
+                'id' => '3',
+                'text' => 'コメント＿３'
             ]
+
         ]);
     }
 }

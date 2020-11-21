@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Favorite extends Model
 {
-    protected $table = 'comments';
+    protected $table = 'favorites';
 
     protected $fillable = [
         'id',
-        'text',
+        'fav'
     ];
 }

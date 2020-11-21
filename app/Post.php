@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Log;
 
 class Post extends Model
 {
@@ -11,12 +13,18 @@ class Post extends Model
     protected $table  = "posts";
 
     protected $fillable = [
+        'id',
         'text',
-        'sort'
+        'comment_id',
+        'favorite_id'
     ];
-
-    public function comments(): HasMany
+    public function comment(): BelongsTo
     {
-        return $this->hasMany('App\Commnet');
+        return $this->belongsTo('App\Comment');
+    }
+
+    public function favorite(): BelongsTo
+    {
+        return $this->belongsTo('App\Favorite');
     }
 }
