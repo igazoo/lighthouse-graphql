@@ -1,0 +1,7 @@
+type FlagTest {
+    id: ID
+    social_insurance_flag: Boolean  
+    social_insurance_remark: String
+    income_tax_flag: Boolean
+    income_tax_remark: String
+}

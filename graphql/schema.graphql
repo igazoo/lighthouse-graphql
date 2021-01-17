@@ -1,4 +1,9 @@
-#import  post.graphql
+#import **/*.graphql
+
+scalar Upload
+    @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+
+
 
 type Query {
     users: [User!]! @all
@@ -10,19 +15,8 @@ type User {
     name: String!
 }
 
-type Post {
-    id: ID!
-    text: String!
-    comment: Comment @belongsTo
-    favorite: Favorite @belongsTo
-}
-
-type Comment {
-    id: ID!
-    text: String!
-}
-
 type Favorite {
     id: ID!
     fav: String!
 }
+

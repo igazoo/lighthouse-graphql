@@ -1,0 +1,31 @@
+extend type Mutation{
+    createReport(
+        input: CreateReportInput @spread
+    ): Report @create 
+
+    updateReport(
+        input: UpdateReportInput @spread
+    ): Report @update
+}
+
+input CreateReportInput {
+    text: String
+    flag: Boolean
+    otherReports: OtherReportHasMany
+}
+
+input UpdateReportInput {
+    id: ID
+    text: String
+    flag: Boolean
+}
+
+input OtherReportHasMany {
+    create: [OtherReportInput]
+}
+
+input OtherReportInput {
+    report_id: Int
+    text: String
+    relationship: String
+}

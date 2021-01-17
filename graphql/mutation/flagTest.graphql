@@ -1,0 +1,25 @@
+extend type Mutation {
+
+    createFlagTest(
+        input: CreateFlagTestInput @spread
+    ): FlagTest  @CreateFlagTestValidation
+
+    updateFlagTest(
+        input:UpdateFlagTestInput @spread
+    ): FlagTest @UpdateFlagTestValidation
+}
+
+input CreateFlagTestInput {
+    social_insurance_flag: Boolean  
+    social_insurance_remark: String
+    income_tax_flag: Boolean
+    income_tax_remark: String
+}
+ 
+ input UpdateFlagTestInput {
+    id: ID
+    social_insurance_flag: Boolean  
+    social_insurance_remark: String
+    income_tax_flag: Boolean
+    income_tax_remark: String
+}

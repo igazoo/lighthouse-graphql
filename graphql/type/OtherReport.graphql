@@ -1,0 +1,6 @@
+type OtherReport {
+    id: ID
+    text: String
+    relationship: String
+    report_id: String
+}
